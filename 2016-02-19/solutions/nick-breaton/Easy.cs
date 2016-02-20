@@ -6,27 +6,28 @@ using System.Threading.Tasks;
 
 namespace ACM
 {
-    class Easy
+  class Easy
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            string plain = "abcdefghijklmnopqrstuvwxyz";
-            string cipher = "ZYXWVUTSRQPONMLKJIHGFEDCBA".ToLower();
+      string plain = "abcdefghijklmnopqrstuvwxyz";
+      string cipher = "ZYXWVUTSRQPONMLKJIHGFEDCBA".ToLower();
 
-            Console.Write("Enter phrase: ");
-            string input = Console.ReadLine().ToLower();
-            string conversion = "";
+      Console.Write("Enter phrase: ");
 
-            for (int i = 0; i < input.Length; i++)
-            {
-                
-                int index = plain.IndexOf(input[i]);
-                conversion += cipher[index];
-            }
+      string input = Console.ReadLine().ToLower();
+      string conversion = "";
 
-            Console.WriteLine(conversion);
+      for (int i = 0; i < input.Length; i++)
+      {
+        int index = plain.IndexOf(input[i]);
+        conversion += cipher[index];
+      }
 
-            Console.ReadLine();
-        }
+      Console.WriteLine(conversion);
+
+      // keep console open
+      Console.ReadLine();
     }
+  }
 }
