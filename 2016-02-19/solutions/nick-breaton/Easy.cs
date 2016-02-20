@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM
 {
-    class Program
+    class Easy
     {
         static void Main(string[] args)
         {
