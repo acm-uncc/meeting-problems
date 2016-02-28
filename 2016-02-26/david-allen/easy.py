@@ -2,9 +2,9 @@
 #	Major Contributor:	Parker Garrison
 #	Author:			David Allen
 
+# input from text file as cmd argument
 import sys
 
-# input from text file as cmd argument
 
 class TempTracker():
 
