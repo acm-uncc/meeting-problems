@@ -1,6 +1,6 @@
 /**
   Major credit to Matthew Goodman
-  Typing by Nick Breaton :)
+  Typing by Nick Breaton :) 
 */
 
 import java.util.Scanner;
