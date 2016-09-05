@@ -1,0 +1,34 @@
+#!/bin/bash
+echo ""
+echo "  Welcome to the UNCC ACM solution setup!"
+echo ""
+
+# get first name
+printf "  Enter your first name: "
+read first
+
+# get last name
+printf "  Enter your last name: "
+read last
+
+# convert name to lowercase
+first=$(echo $first | tr A-Z a-z)
+last=$(echo $last | tr A-Z a-z)
+
+# get today's date
+today=$(date +%Y-%m-%d)
+
+# build target directory
+target="2016-2017/$today/$first-$last/"
+
+# make target directory
+mkdir -p $target
+
+# give instructions
+echo ""
+echo "  To get started:"
+echo ""
+echo "   ➜  cd $target"
+echo ""
+echo "   ➜  [your-favorite-text-editor] solution.java"
+echo ""
