@@ -11,23 +11,23 @@ Home of all UNC Charlotte ACM logical, practice problems and their solutions.
 git clone git@github.com:uncc-acm/meeting-problems.git
 ```
 
-- Enter the directory of the recently cloned repository:
+2. Enter the directory of the recently cloned repository:
 ```bash
 cd meeting-problems/
 ```
 
-- Run the `add-solution` script provided:
+3. Run the `add-solution` script provided:
 ```bash
 ./add-solution
 ```
 
-- Place your solution file(s) in the created directory.
+4. Place your solution file(s) in the created directory.
 
-- Commit and push your code with `git`:
+5. Commit and push your code with `git`:
 ```bash
 git add -A
 git commit -m "Add solution to problem X"
 git push
 ```
 
-- Check that your solution is on the [GitHub repository](https://github.com/uncc-acm/meeting-problems).
+6. Check that your solution is on the [GitHub repository](https://github.com/uncc-acm/meeting-problems).
