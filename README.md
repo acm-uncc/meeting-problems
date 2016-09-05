@@ -33,5 +33,3 @@ git add -A
 git commit -m "Add solution to problem X"
 git push
 ```
-
-Check that your solution is on the [GitHub repository](https://github.com/uncc-acm/meeting-problems).
