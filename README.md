@@ -2,7 +2,7 @@
 
 Home of all UNC Charlotte ACM logical, practice problems and their solutions.
 
-**Note:** Please follow the [UNCC ACM setup instructions](https://github.com/uncc-acm/getting-started/blob/master/README.md) before proceeding with this guide.
+**Note:** Please follow the [UNCC ACM setup instructions](https://github.com/uncc-acm/getting-started/blob/master/README.md)  (coming soon) before proceeding with this guide.
 
 ## Adding Your Solution
 
