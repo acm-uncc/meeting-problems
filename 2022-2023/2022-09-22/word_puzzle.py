@@ -1,26 +1,32 @@
+import bisect
+
 word = input()
 piece = input()
 piece_set = set(piece)
 
 pieces = set()
 
-def dfs(node):
+def dfs(rotated_piece, node):
 	if len(node) == len(piece):
 		return 1
 
-	char = piece[len(node)]
+	char = rotated_piece[len(node)]
 
-	minimum_i = node[-1] + 1
+	minimum_i = node[-1] + 1 if len(node) > 0 else 0
 
 	num_solutions = 0
 
-	for i in char_indices[char]:
-		if i >= minimum_i:
-			node.append((char, i))
+	if char not in char_indices:
+		return 0
 
-			num_solutions += dfs(node)
+	i = bisect.bisect_left(char_indices[char], minimum_i)
 
-			node.pop()
+	for j in char_indices[char][i:]:
+		node.append(j)
+
+		num_solutions += dfs(rotated_piece, node)
+
+		node.pop()
 
 	return num_solutions
 
@@ -39,4 +45,6 @@ for i, char in enumerate(word):
 result = 0
 
 for rotated_piece in pieces:
-	result += dfs([])
+	result += dfs(rotated_piece, [])
+
+print(result % 1000000007)
