@@ -4,12 +4,12 @@ number = int(number_string)
 upper = number + 1
 lower = number - 1
 
-while lower > 0 and upper <= 10 ** 15:
+while lower > 0 or upper <= 10 ** 15:
 	lower_str = str(lower)
 	upper_str = str(upper)
 
-	is_upper_alien = True
-	is_lower_alien = True
+	is_upper_alien = upper <= 10 ** 15
+	is_lower_alien = lower > 0
 
 	for char in number_string:
 		if char in upper_str:
@@ -33,7 +33,7 @@ while lower > 0 and upper <= 10 ** 15:
 
 	lower_power = None
 
-	for i in range(len(lower_str) - 1, -1, -1):
+	for i in range(len(lower_str)):
 		if lower_str[i] in number_string:
 			lower_power = 10 ** (len(lower_str) - i - 1)
 
@@ -41,7 +41,7 @@ while lower > 0 and upper <= 10 ** 15:
 
 	upper_power = None
 
-	for i in range(len(upper_str) - 1, -1, -1):
+	for i in range(len(upper_str)):
 		if upper_str[i] in number_string:
 			upper_power = 10 ** (len(upper_str) - i - 1)
 
