@@ -18,8 +18,11 @@ positions2 = [None] * len(sorted_times)
 velocities1 = [None] * len(sorted_times)
 velocities2 = [None] * len(sorted_times)
 
-positions1[0] = car1_pos
-positions2[0] = car2_pos
+if len(positions1) > 0:
+	positions1[0] = car1_pos
+
+if len(positions2) > 0:
+	positions2[0] = car2_pos
 
 for times, positions, velocities in [
 	(car1_times, positions1, velocities1),
@@ -28,13 +31,15 @@ for times, positions, velocities in [
 	i = 0
 
 	for j in range(len(sorted_times)):
-		if j == 0:
-			velocities[j] = 0
-		elif sorted_times[j] == times[i]:
-
-			velocities[j] = 1 - velocities[j - 1]
+		if i < len(times) and sorted_times[j] == times[i]:
+			if j == 0:
+				velocities[j] = 1
+			else:
+				velocities[j] = 1 - velocities[j - 1]
 
 			i += 1
+		elif j == 0:
+			velocities[j] = 0
 		else:
 			velocities[j] = velocities[j - 1]
 
@@ -49,8 +54,8 @@ for i in range(len(sorted_times) - 1):
 		collision_time = \
 			(positions2[i] - positions1[i]) / (velocities1[i] - velocities2[i])
 
-		if sorted_times[i] <= collision_time <= sorted_times[i + 1]:
-			print(f"bumper tap at time {math.ceil(collision_time)}")
+		if 0 <= collision_time <= sorted_times[i + 1] - sorted_times[i]:
+			print(f"bumper tap at time {math.ceil(sorted_times[i] + collision_time)}")
 
 			break
 else:
