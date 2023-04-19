@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2>Add a Meeting</h2>
+
+	<form action="{{ url_for('submit_meeting') }}" method="post">
+		<label for="topic-input">Topic</label>
+		<input type="text" id="topic-input" name="topic" required>
+
+		<br>
+		<br>
+
+		<label for="date-input">Date</label>
+		<input type="date" id="date-input" name="date" required>
+
+		<br>
+		<br>
+
+		<label for="time-input">Time</label>
+		<input type="time" id="time-input" name="time" required>
+
+		<br>
+		<br>
+
+		<button type="submit">Submit</button>
+	</form>
+{% endblock %}

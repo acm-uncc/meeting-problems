@@ -19,7 +19,7 @@ def compute_primes(n):
 
 	return primes
 
-@app.route("/")
+@app.route("/primes")
 def index():
 	n = int(flask.request.args["n"])
 
